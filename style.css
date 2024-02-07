@@ -1,5 +1,4 @@
 @import "https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap";
-
 * {
   padding: 0;
   margin: 0;
@@ -8,253 +7,760 @@
 
 html {
   font-size: 10px;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   scroll-behavior: smooth;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.more-art:link,
+.more-art:visited {
+  color: black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 a {
   text-decoration: none;
 }
-
 .container {
+  min-height: 100vh;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-/* Brand */
-.brand h1 {
-  font-size: 3rem;
-  font-family: "Courier New", Courier, monospace;
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+p {
+  color: black;
+  font-size: 1.4rem;
+  margin-top: 5px;
+  line-height: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+  justify-content: center;
+}
+.section-title {
+  font-size: 4rem;
+  font-weight: 300;
+  color: black;
+  margin-bottom: 10px;
+  margin-top: 50px;
   text-transform: uppercase;
-  background: linear-gradient(45deg, #d875f4, #3c3b3b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+.section-title span {
+  color: rgb(250, 197, 106);
 }
 
-.brand h1 span {
-  color: rgb(195, 85, 239);
-}
-
-/* Header */
+/* Header section */
 #header {
   position: fixed;
   z-index: 1000;
-  width: 100%;
-  background-color: rgba(31, 30, 30, 0.24);
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto; /*top opaque*/
 }
-
+#header .header {
+  min-height: 8vh;
+}
 #header .nav-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 1500px;
+  padding: 0 30px;
+}
+#header .nav-list ul {
+  list-style: none;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow-x: hidden;
+  transition: 0.5s ease left;
+}
+
+#header .nav-list ul a {
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-family: cursive;
   padding: 20px;
+  display: block;
 }
 
-#header .nav-list {
-  display: none; /* Hide nav list by default */
+#header .nav-list ul li:hover a {
+  color: rgb(0, 0, 0);
 }
 
-#header .hamburger {
-  display: block; /* Display hamburger menu */
+.img {
+  border-radius: 50px;
+}
+
+/* End Hero Section */
+
+/*Skills*/
+
+/* Add these styles to your existing CSS */
+#skills {
+  position: relative;
+  text-align: center;
+  padding: 100px 0;
+  border: 20px solid white;
+  border-radius: 25px; /* Add border radius for a rounded look */
+  background-color: #ede8ef;
+}
+
+.skills-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Create two equal-width columns */
+  gap: 150px; /* Add a gap of 20px between columns */
+}
+
+.skills-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill {
+  width: 400px;
+  height: 90px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(250, 197, 106);
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+.skill:hover {
+  background-color: #faad3a;
   cursor: pointer;
 }
 
-#header .nav-list ul {
-  list-style: none;
-  display: flex;
-}
-
-#header .nav-list ul li {
-  margin: 0 10px;
-}
-
-#header .nav-list ul li a {
-  font-size: 1.6rem;
-  text-transform: uppercase;
+.skill-name {
+  font-size: 1.5rem;
   color: white;
-}
-
-/* Hero Section */
-#hero {
-  padding: 100px 0;
   text-align: center;
-  background-image: url(./img/hero-bg.png);
-  background-size: cover;
-  background-position: top center;
 }
 
-#hero h1 {
-  font-size: 3.6rem;
-  margin-bottom: 20px;
+.caption p {
+  font-family: cursive;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
 }
 
-#hero a.cta {
-  font-size: 2rem;
-  padding: 10px 30px;
-  margin-top: 30px;
+/*education*/
+.education {
+  text-align: center;
+  padding: 40px 0;
 }
 
-/* Project Section */
-#projects {
-  padding: 100px 0;
-  background-color: #f9f9f9;
+.education-item {
+  margin: 20px 0;
+  border-left: 2px solid rgb(250, 197, 106);
+  padding-left: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-#projects .projects-top h1 {
-  font-size: 3.6rem;
-  margin-bottom: 20px;
+.education-item h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: rgb(250, 197, 106);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-#projects .projects-top p {
-  font-size: 1.6rem;
-  margin-bottom: 40px;
+.education-details {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: black;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-#projects .projects-bottom {
+/*experience*/
+.experience {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.experience-items {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-#projects .projects-item {
-  flex-basis: 80%;
-  max-width: 400px;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+.experience-item {
+  border-left: 2px solid rgb(250, 197, 106);
+  padding-left: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-#projects .projects-item h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+.experience-item h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: rgb(250, 197, 106);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-#projects .projects-item p {
-  font-size: 1.6rem;
+.experience-details {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: black;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
-/* About Section */
-#about {
-  padding: 100px 0;
+/* contact Section */
+#contact .contact {
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 90%;
 }
-
-#about .col-left,
-#about .col-right {
-  width: 100%;
-  text-align: center;
-}
-
-#about .col-left img {
-  max-width: 100%;
-  border-radius: 50%;
-}
-
-#about .col-right h1 {
-  font-size: 3.6rem;
-  margin-bottom: 20px;
-}
-
-#about .col-right p {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-}
-
-#about .col-right .cta {
-  font-size: 2rem;
-  padding: 10px 30px;
-}
-
-/* Contact Section */
-#contact {
-  padding: 100px 0;
-}
-
 #contact .contact-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  /* max-width: 400px; */
+  width: 100%;
 }
-
 #contact .contact-item {
-  flex-basis: 80%;
-  max-width: 400px;
-  margin: 20px;
+  width: 80%;
   padding: 20px;
+  text-align: center;
   border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 30px;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 0px 18px 0 #0000002c;
+  transition: 0.3s ease box-shadow;
 }
-
-#contact .contact-item .icon {
+#contact .contact-item:hover {
+  box-shadow: 0px 0px 5px 0 #0000002c;
+}
+#contact .icon {
+  width: 70px;
+  margin: 0 auto;
   margin-bottom: 10px;
 }
-
-#contact .contact-item h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+#contact .contact-info h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 5px;
 }
-
-#contact .contact-item h2 {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
+#contact .contact-info h2 {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  font-weight: 500;
 }
+/*End contact Section */
 
 /* Footer */
 #footer {
-  padding: 50px 0;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
+  background-image: linear-gradient(60deg, #ffffff 0%, rgb(250, 197, 106) 100%);
 }
-
+#footer .footer {
+  min-height: 200px;
+  flex-direction: column;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+#footer h2 {
+  color: white;
+  font-weight: 500;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#footer .social-icon {
+  display: flex;
+  margin-bottom: 30px;
+}
 #footer .social-item {
-  margin: 0 10px;
+  height: 50px;
+  width: 50px;
+  margin: 0 5px;
 }
-
 #footer .social-item img {
-  width: 40px;
-  height: 40px;
+  filter: grayscale(1);
+  transition: 0.3s ease filter;
 }
 
-/* Media Queries */
+#footer p {
+  color: white;
+  font-size: 1.3rem;
+}
+/* End Footer */
+
+/* Keyframes */
+
+/* Media Query For Tablet */
 @media only screen and (min-width: 768px) {
-  .brand h1 {
-    font-size: 4rem;
-  }
-
-  #hero h1 {
-    font-size: 5rem;
-  }
-
-  #hero a.cta {
+  .cta {
     font-size: 2.5rem;
-    padding: 15px 40px;
+    padding: 20px 60px;
+  }
+  h1.section-title {
+    font-size: 6rem;
   }
 
-  #projects .projects-item {
-    flex-basis: 45%;
+  /* Hero */
+  #hero h1 {
+    font-size: 8rem;
+  }
+  /* End Hero */
+
+  /* About */
+
+  #about .col-left .about-img {
+    height: 400px;
+    width: 400px;
   }
 
-  #about .col-left,
+  #about .about-img {
+    border-radius: 60%;
+  }
+
+  #about .about {
+    flex-direction: row;
+  }
+  #about .col-left {
+    width: 600px;
+    height: 400px;
+    padding-left: 60px;
+  }
+
   #about .col-right {
-    width: 50%;
+    text-align: left;
+    padding: 30px;
+  }
+  #about .col-right h1 {
     text-align: left;
   }
+
+  #about .p1 {
+    text-align: justify;
+  }
+
+  #about .p2 {
+    text-align: justify;
+  }
+  /* End About */
+
+  /* contact  */
+
+  #contact {
+    position: relative;
+    text-align: center;
+    padding: 100px 0;
+    border: 20px solid white; /* Add a white border */
+    border-radius: 25px; /* Add border radius for a rounded look */
+    background-color: #ede8ef;
+  }
+
+  #contact .contact-items {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0;
+  }
+
+  #contact .contact-item .contact-info {
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+  }
+  /* End contact  */
 }
 
-@media only screen and (min-width: 1200px) {
-  .container {
-    max-width: 1600px;
+#header .nav-list ul {
+  position: initial;
+  display: block;
+  height: auto;
+  width: fit-content;
+  background-color: transparent;
+}
+#header .nav-list ul li {
+  display: inline-block;
+}
+#header .nav-list ul li a {
+  font-size: 1.5rem;
+}
+
+.insta {
+  height: 10%;
+  width: 10%;
+  justify-content: right;
+}
+
+.link {
+  font-size: 10px;
+  margin-left: 10px;
+}
+
+/* Add these styles to target the #hero section */
+#hero {
+  background-color: hsl(
+    0,
+    100%,
+    97%
+  ); /* Set the background color to off-white */
+
+  padding: 20px; /* Add padding to create a boundary */
+
+  /* You can adjust the border properties as needed */
+  /* border: 8px solid rgb(250, 197, 106;*/
+}
+
+/* Style the h1 element inside #hero with different color */
+#hero h1 {
+  color: black; /* Change the text color to black */
+}
+
+/* Home Section */
+
+#home {
+  background: linear-gradient(
+    135deg,
+    #fefefe
+  ); /* Add your gradient colors here */
+  text-align: center;
+  padding: 100px 0;
+}
+
+#home .home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#home .home-greeting {
+  flex-basis: 50%;
+}
+
+#home .home-greeting h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding-bottom: 200px;
+}
+
+#home .profile-picture {
+  flex-basis: 50%;
+  padding-bottom: 170px;
+}
+
+#home .profile-picture img {
+  max-width: 350px;
+  height: 350px;
+  border-radius: 50%;
+}
+.small-profile-picture {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 80px; /* Adjust the size as needed */
+  height: 80px; /* Adjust the size as needed */
+  border-radius: 50%; /* Make it circular */
+  overflow: hidden;
+}
+
+.small-profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#home {
+  position: relative;
+  text-align: center;
+  padding: 100px 0;
+  border: 20px solid white; /* Add a white border */
+  border-radius: 25px; /* Add border radius for a rounded look */
+  background-color: #ede8ef;
+}
+.design-box {
+  position: absolute;
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+}
+
+.design-item,
+.design-item2,
+.design-item3,
+.design-item4,
+.design-item5,
+.design-item6,
+.design-item7,
+.design-item8 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.design-item2 {
+  background: linear-gradient(135deg, #f9c56a, #fefbdf);
+  bottom: 200px;
+  right: 300px;
+  border-radius: 6px;
+}
+
+.design-item3 {
+  background: linear-gradient(135deg, #fefbdf, #f9c56a);
+  bottom: 100px;
+  right: 120px;
+  border-radius: 6px;
+}
+
+.design-item4 {
+  background: linear-gradient(135deg, #f9c56a, #fefbdf);
+  bottom: 100px;
+  right: 500px;
+  border-radius: 6px;
+}
+
+.design-item6 {
+  background: linear-gradient(135deg, #f9c56a, #fefbdf);
+  top: 100%;
+  right: 400%;
+  border-radius: 6px;
+}
+
+.design-item7 {
+  background: linear-gradient(135deg, #fefbdf, #f9c56a);
+  top: 50px;
+  right: 400px;
+  border-radius: 6px;
+}
+
+/* End Home Section */
+
+/* Rest of your existing CSS styles */
+
+.social-icons {
+  text-align: left;
+  margin-top: 20px;
+  display: flex;
+  position: absolute;
+  left: 220px;
+  top: 330px;
+}
+
+.social-icon {
+  font-size: 2rem;
+  margin: 0 10px;
+  color: #086fab; /* Change the icon color as needed */
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  color: rgb(235, 193, 255); /* Change the icon color on hover as needed */
+}
+
+/* Add this CSS code to your existing stylesheet */
+.cta-button {
+  display: inline-block;
+  background-color: rgb(
+    250,
+    197,
+    106
+  ); /* Choose your desired background color */
+  color: #fff; /* Text color */
+  padding: 10px 20px; /* Adjust the padding as needed */
+  border: none;
+  border-radius: 5px; /* Adjust the border radius as needed */
+  font-size: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.cta-button:hover {
+  background-color: #faad3a; /* Change to a different color on hover */
+}
+
+/* Add these styles to make the text beautiful */
+.p1 p {
+  font-family: cursive; /* Use a Google Font or any font you prefer */
+  font-size: 1.6rem; /* Adjust the font size as needed */
+  line-height: 2.2rem; /* Adjust the line height for better spacing */
+  margin-top: 10px; /* Add margin for spacing at the top */
+  margin-bottom: 20px; /* Add margin for spacing at the bottom */
+}
+
+/* Add this CSS code to style.css */
+.home-section {
+  /* border: 10px solid rgb(250, 197, 106);*/ /* Adjust the border properties as needed */
+  padding: 10px; /* Add padding to create a boundary */
+  height: 592px;
+}
+
+/*Project section*/
+/* Add your existing CSS styles here */
+
+#project {
+  position: relative;
+  text-align: center;
+  padding: 100px 0;
+  border: 20px solid white; /* Add a white border */
+  border-radius: 25px; /* Add border radius for a rounded look */
+  background-color: #ede8ef;
+}
+
+#project .project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#project .col-left {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#project .project-list {
+  text-align: left;
+}
+
+#project .project-list h2 {
+  font-size: 4rem;
+
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: #ffffff;
+  margin-top: 20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #ffffff2c;
+  transition: 0.3s ease box-shadow;
+  background-color: rgb(250, 197, 106);
+}
+
+.project .project-list h2:hover {
+  background-color: #faad3a;
+  cursor: pointer;
+}
+
+#project .project-list p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+#project .project-list h2:hover {
+  box-shadow: 0px 0px 5px 0 #0000002c;
+}
+
+/* Add your existing CSS styles here */
+
+#project .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#project .col-left {
+  max-width: 600px;
+  width: 100%;
+  padding-right: 20px; /* Adjust spacing between the columns */
+}
+
+#project .col-right {
+  max-width: 600px;
+  width: 100%;
+  padding-left: 20px; /* Adjust spacing between the columns */
+}
+
+#project .col-left,
+#project .col-right {
+  text-align: left;
+}
+
+#project .project-list h2 {
+  /* Adjust other styles as needed */
+  padding: 20px;
+}
+
+#about {
+  background-image: url("C:/Users/91840/Downloads/port2.png");
+}
+
+#education {
+  background-image: url("C:/Users/91840/Downloads/port2.png");
+}
+
+#experience {
+  background-image: url("C:/Users/91840/Downloads/port2.png");
+}
+
+@media screen and (max-width: 768px) {
+  .nav-list {
+    display: none;
   }
 
-  #header .nav-list {
-    display: block; /* Show nav list for desktop */
+  .mobile-menu {
+    display: block;
+    text-align: center;
   }
+
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .mobile-menu ul li {
+    margin-bottom: 10px;
+  }
+
+  .mobile-menu.show {
+    display: block;
+  }
+}
+
 
   #header .hamburger {
     display: none; /* Hide hamburger menu for desktop */
